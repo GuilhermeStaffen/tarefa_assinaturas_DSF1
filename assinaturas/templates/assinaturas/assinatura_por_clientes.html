@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4">Clientes da Assinatura: <strong>{{ assinatura.nome }}</strong></h2>
+
+  {% if clientes %}
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>E-mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cliente in clientes %}
+          <tr>
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.cpf }}</td>
+            <td>{{ cliente.email }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <div class="alert alert-warning">
+      Nenhum cliente associado a esta assinatura.
+    </div>
+  {% endif %}
+
+  <a href="{% url 'lista_assinaturas' %}" class="btn btn-secondary mt-3">Voltar</a>
+</div>
+{% endblock %}
