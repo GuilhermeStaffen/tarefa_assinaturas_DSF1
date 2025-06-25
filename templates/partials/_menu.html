@@ -11,39 +11,20 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Aluno
+              Cliente
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="">Cadastrar Aluno</a></li>
-              <li><a class="dropdown-item" href="">Alunos Ativos</a></li>
-              <li><a class="dropdown-item" href="">Alunos Inativos</a></li>
+              <li><a class="dropdown-item" href="">Cadastrar Cliente</a></li>
+              <li><a class="dropdown-item" href="">Listar Clientes</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Curso
+              Assinatura
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="">Cadastrar Curso</a></li>
-              <li><a class="dropdown-item" href="">Lista de Curso</a></li>
-            </ul>
-          </li>
-           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Disciplinas
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="">Cadastrar Disciplina</a></li>
-              <li><a class="dropdown-item" href="">Lista de Disciplinas</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Matrícula
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="">Realizar Matricula</a></li>
-              <li><a class="dropdown-item" href="">Histórico de Matrículas</a></li>
+              <li><a class="dropdown-item" href="{% url 'nova_assinatura' %}">Cadastrar Assinatura</a></li>
+              <li><a class="dropdown-item" href="{% url 'lista_assinaturas' %}">Lista de Assinaturas</a></li>
             </ul>
           </li>
         </ul>
