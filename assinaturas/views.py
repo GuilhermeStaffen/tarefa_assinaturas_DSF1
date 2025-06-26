@@ -11,9 +11,6 @@ def nova_assinatura(request):
             form.save()
             messages.success(request, 'Assinatura criada com sucesso!')
             return redirect('lista_assinaturas')
-        else:
-            messages.error(request, 'Erro ao criar assinatura. Verifique os dados e tente novamente.')
-            return redirect('lista_assinaturas')
     else:
         form = AssinaturaForm()
     return render(request, 'assinaturas/nova_assinatura.html', {'form': form})
