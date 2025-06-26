@@ -7,5 +7,9 @@ class Assinatura(models.Model):
     mensalidade = models.DecimalField(max_digits=6, decimal_places=2)
     clientes = models.ManyToManyField(Cliente)
     
+    def save(self, *args, **kwargs):
+        self.nome = self.nome.title()
+        super().save(*args, **kwargs)
+    
     def __str__(self):
         return self.nome
