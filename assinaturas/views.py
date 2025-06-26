@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, render
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from .models import Assinatura
 from .forms import AssinaturaForm
@@ -8,6 +9,10 @@ def nova_assinatura(request):
         form = AssinaturaForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Assinatura criada com sucesso!')
+            return redirect('lista_assinaturas')
+        else:
+            messages.error(request, 'Erro ao criar assinatura. Verifique os dados e tente novamente.')
             return redirect('lista_assinaturas')
     else:
         form = AssinaturaForm()
