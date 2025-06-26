@@ -33,6 +33,9 @@
                 <td>{{ cliente.cpf }}</td>
                 <td>{{ cliente.data_nascimento }}</td>
                 <td>{{ cliente.email }}</td>
+                <td>
+                    <a href="{% url 'cliente_assinaturas' cliente.id %}" class="btn btn-sm btn-primary">Ver Assinaturas</a>
+                </td>
             </tr>
             {% empty %}
             <tr>

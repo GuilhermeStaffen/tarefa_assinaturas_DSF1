@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from .models import Assinatura
+from .models import Assinatura, Cliente
 from .forms import AssinaturaForm
 
 def nova_assinatura(request):
@@ -29,3 +29,7 @@ def assinatura_por_clientes(request, assinatura_id):
         'assinatura': assinatura,
         'clientes': clientes
     })
+
+def cliente_assinaturas(request, cliente_id):
+    cliente = get_object_or_404(Cliente, id=cliente_id)
+    return render(request, 'clientes/cliente_assinaturas.html', {'cliente': cliente, 'assinaturas': cliente.assinatura_set.all()})
