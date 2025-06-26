@@ -22,7 +22,7 @@
           <td>{{ assinatura.nome }}</td>
           <td>R$ {{ assinatura.mensalidade }}</td>
           <td>
-            <a href="{% url 'assinatura_por_clientes' assinatura.id %}" class="btn btn-info btn-sm">Ver Clientes</a>
+            <a href="{% url 'assinatura_por_clientes' assinatura.id %}" class="btn btn-primary btn-sm">Ver Clientes</a>
           </td>
         </tr>
       {% empty %}
